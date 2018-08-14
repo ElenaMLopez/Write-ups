@@ -1,0 +1,7 @@
+Este reto nos decía que el compañero pdparla había comentado una foto a última hora con la flag.
+Para esto, había que buscar por las redes sociales de fotos más utilizadas, la respuesta estaba en Instagram.
+Para esto, buscabas al usuario pdparla y veías a la gente que seguía (gente que no tenía nada que ver con él),
+y luego estaba la cuenta de @keepcoding_es una gran compañera de HackMadrid. Había que buscar la foto del taller
+impartido por Elena Lopez de Git-Gitlab y ver el comentario con la flag que era reconOnHM
+
+Si lo pasamos a md5: flag{0032a1e9f4b66348552abf7c195ea709} 

@@ -1,0 +1,67 @@
+Primero nos damos cuenta que el código tiene parte ofuscadas, luego las desofuscamos y vemos que el comentario contiene un link
+a una web que es una base de datos para desencriptar sha1 y en las variables texto cifrado en el sha1 así que se descifran.
+Despues, hay que darse cuenta que la funcion a nos introduce un caracter erroneo en p ya que se llama despues de crearla con ().
+Por lo que o bien la comentamos o bien no dejamos ejecutarla en el debug.
+Por último vemos que el botón de submit llama a b() que dice si es correcta o no la respuesta. Para esto, llama a d(p,q) donde p y q
+son las variables con los string jsWeirdAF y IamTheKey, y comprueba si la respuesta de esta empieza por 2 y si el valor introducido
+en la caja del html es el valor devuelto de d(p,q). 
+
+Por último comentar que d() es un simple cifrado XOR.
+
+La respuesta de esto será 23123a3101172f243f pasado a md5: flag{97465573fb0da75d5f99d8eeca9e5aa8}
+
+El html con el ejercicio resuelto quedaría de esta manera:
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+        var p= "jsWeirdAF";
+        var q= "IamTheKey";
+        //(function a(){p+= 'a'})();
+
+        function b(){
+          var entrada = document.getElementById("ent").value;
+          var fin = d(p,q)
+          var z = (fin == entrada && entrada[0] == "2");
+          if (z){
+            document.getElementById("print").innerHTML = "Correcto !";
+          }else{
+            document.getElementById("print").innerHTML = "Esa no es";
+          }
+        }
+      function d(input,input2) {
+    var c = '';
+    while (input2.length < input.length) {
+         input2 += input2;
+    }
+    for(var i=0; i<input.length; i++) {
+        var value1 = input[i].charCodeAt(0);
+        var value2 = input2[i].charCodeAt(0);
+
+        var xv = value1 ^ value2;
+
+        var xvh = xv.toString("16");
+
+        if (xvh.length < 2) {
+            xvh = "0" + xvh;
+        }
+
+        c += xvh;
+    }
+    return c;
+}
+
+  </script>
+</head>
+<body>
+  <form>
+    <input type=text id="ent" placeholder="Suerte !">
+    <input type=submit onclick="b()">
+  </form>
+  <br>
+    <h2 id="print"></h2>
+</body>
+<!-- http://md5encrypt.net/en/ -->
+</html>

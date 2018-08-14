@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+        var _0xc9c9=["\x38\x31\x33\x38\x65\x38\x64\x30\x38\x34\x38\x33\x34\x61\x32\x30\x39\x38\x63\x39\x34\x35\x63\x66\x36\x35\x38\x39\x35\x62\x32\x30\x62\x38\x65\x38\x63\x65\x64\x64"];
+        var p=_0xc9c9[0];
+        var _0xc990=["\x36\x64\x32\x38\x35\x38\x35\x65\x30\x63\x36\x63\x37\x34\x38\x38\x66\x62\x64\x35\x38\x39\x62\x30\x35\x32\x66\x37\x38\x35\x37\x36\x31\x63\x32\x61\x65\x33\x65\x35"];
+        var q=_0xc990[0];
+        (function a(){p+= 'a'})();
+
+        function b(){
+          var entrada = document.getElementById("ent").value;
+          var fin = d(p,q)
+          var z = (fin == entrada && entrada[0] == "2");
+          if (z){
+            document.getElementById("print").innerHTML = "Correcto !";
+          }else{
+            document.getElementById("print").innerHTML = "Esa no es";
+          }
+        }
+      function d(input,input2) {
+    var c = '';
+    while (input2.length < input.length) {
+         input2 += input2;
+    }
+    for(var i=0; i<input.length; i++) {
+        var value1 = input[i].charCodeAt(0);
+        var value2 = input2[i].charCodeAt(0);
+
+        var xv = value1 ^ value2;
+
+        var xvh = xv.toString("16");
+
+        if (xvh.length < 2) {
+            xvh = "0" + xvh;
+        }
+
+        c += xvh;
+    }
+    return c;
+}
+
+  </script>
+</head>
+<body>
+  <form>
+    <input type=text id="ent" placeholder="Suerte !">
+    <input type=submit onclick="b()">
+  </form>
+  <br>
+    <h2 id="print"></h2>
+</body>
+<!-- \x68\x74\x74\x70\x3a\x2f\x2f\x00\x6d\x00\x64\x00\x35\x00\x64\x00\x65\x00\x63\x00\x72\x00\x79\x00\x70\x00\x74\x00\x2e\x00\x6e\x00\x65\x00\x74\x00\x2f\x00\x65\x00\x6e\x00\x2f\x00 -->
+</html>

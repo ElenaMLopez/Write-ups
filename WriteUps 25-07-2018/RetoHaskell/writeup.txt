@@ -1,0 +1,7 @@
+En este reto se proponía crear una función llamada rango que pasada una lista xs cogiera el minimo y el máximo de esta.
+
+Para resolver este reto había que crear la siguiente función:
+
+rango xs = [minimum xs,maximum xs]
+
+que pasado a md5 resulta en: flag{8737f209a423e69d97ee475fe9e2b2e5}

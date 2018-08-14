@@ -1,0 +1,16 @@
+Apellido del fundador de la revista "The Hacker Quarterly"
+goldstein = flag{c0fb995e48d4cc1cf5eca9a8bacf0ae6}
+
+Nombre del hackerspace fundado por Mitch Altman
+noisebridge = flag{5d1f1fbeefa4b8bcca91230692b388cb}
+
+Apellido de uno de los principales desarrolladores de Markdown
+swartz = flag{9944b63d6ad58594b8e602b3359b7928}
+
+Apellido del hacker conocido como “comrade”
+james = flag{b4cc344d25a2efe540adbf2678e2304c}
+
+Nickname utilizado por hacker el fundador de WKOS [W-"chaos"], a pirate station
+crunchman = flag{f6f2f52e513af0e5cb50f88b328ad4e5}
+
+

@@ -1,0 +1,18 @@
+Para empezar, este es un reto que mezcla la búsqueda del nombre original del
+actor dentro de la serie, con esteganografía y criptografía.
+
+El enunciado dice que han conseguido una foto que contiene una contraseña importante para ellos. Al abrir la foto,
+tiene un texto que dice "uno de mis nombres te ayudará". Después de probar con los 3 nombres posibles, damos que este
+ nombre es Wylis, luego ya tenemos una parte. Ahora habrá que fijarse que la imagen contiene un archivo dentro de ella.
+Luego lo intentamos sacar de la imagen y te pide una contraseña. Esta será el nombre anteriormente conseguido.
+El comando utilizado por mí fue: steghide extract -sf Foto1.jpg -xf a1.txt 
+Ahora, nos dirá: Anotar salvoconducto, esto quiere decir que escribamos la contraseña: Wylis
+ya tenemos el archivo, parece ser un texto cifrado y despues vienen tres parametros p=11,q=13 y K=721.
+Esto tiene toda la pinta de ser un cifrado simétrico de RSA. 
+Para entender bien este cifrado http://www.dma.fi.upm.es/recursos/aplicaciones/matematica_discreta/web/aritmetica_modular/rsa.html
+Buscamos una calculadora de rsa para saber los demás números del cifrado (ya que a partir de los dados es posible sacarlo) 
+Por lo tanto, solo nos queda saber a traves de K (e*d) cual de sus dos divisores es e y cual es d.
+Con un pequeño script en python con los datos obtenidos desciframos el texto, que nos muestra la flag:
+"Bien, ahora que has conseguido descifrarlo te dire que la clave es CryptoHacking"
+Con la flag obtenida, la ciframos a MD5 y ya estaría completo el ejercicio.
+La flag será: flag{efb67ad83bd4371a71a82f3f77f1d0fc}

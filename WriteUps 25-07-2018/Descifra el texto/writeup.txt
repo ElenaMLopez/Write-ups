@@ -1,0 +1,13 @@
+Para este reto nos daban un texto cifrado y una clave. Para resolverlo habría que descifrarlo pero no sabemos el cifrado.
+
+Aquí entra en acción openssl, que tiene una gran variedad de cifrados (en cifrados.txt). Para esto, utilizamos un bucle con el
+que recorrer todos los cifrados y para cada uno intentar descifrar el archivo con el texto cifrado.
+
+El bucle utilizado es: for i in $(cat cifrados.txt); do openssl enc -d $i -a -in texto.txt -out 1$i.txt -k HackMadrid; done
+Despues de esto, tendremos muchos txt con intentos de descifrado, pero, ¿cómo sabremos el/los útil/es entre todos?
+
+Pues bien con: strings *.txt | grep flag
+con esto sacaremos todos los strings de los txt y además escogerá las lineas que contengan la palabra flag.
+
+
+ 
